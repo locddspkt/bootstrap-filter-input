@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-filter-input",
+  "version": "0.0.1",
+  "description": "Filter the inputted value",
+  "main": "src/filter-input.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locddspkt/bootstrap-filter-input.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "filter"
+  ],
+  "author": "Loc, Doan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/locddspkt/bootstrap-filter-input/issues"
+  },
+  "homepage": "https://github.com/locddspkt/bootstrap-filter-input#readme",
+  "dependencies": {}
+}

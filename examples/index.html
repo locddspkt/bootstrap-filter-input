@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- new header -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow"/>
+    <title>Bootstrap Filter</title>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- END jquery -->
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- END bootstrap css -->
+
+    <!-- bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- END bootstrap js -->
+
+    <!-- lodash -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <!-- END lodash -->
+
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+
+    <script src="../src/filter-input.js"></script>
+</head>
+<body>
+<div class="container" style="padding-top: 20px">
+    <h2 class="text-center">Example Filter input data</h2>
+    <form>
+        <div class="form-group">
+            <label for="filter-input">Input</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-marker"></i></span>
+                </div>
+                <input id="filter-input" type="text" class="form-control" placeholder="Input filter text here" data-text-selector=".col-filter,.column-2" data-wrapper-selector="tr.filter">
+            </div>
+            <small class="form-text text-primary">data-text-selector='.col-filter,.column-2' data-wrapper-selector='tr.filter'</small>
+        </div>
+        <div class="form-group">
+            <label for="filter-input">Select</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-marker"></i></span>
+                </div>
+                <select id="filter-select" class="custom-select" data-text-selector=".col-filter" data-wrapper-selector="tr.filter">
+                    <option value="">Show all</option>
+                    <option value="1">Column 3 = 1</option>
+                    <option value="2">Column 3 = 2</option>
+                    <option value="3">Column 3 = 3</option>
+                    <option value="4">Column 3 = 4</option>
+                    <option value="5.1">Column 3 = 5.1</option>
+                    <option value="5.2">Column 3 = 5.2</option>
+                    <option value="5">Column 3 = 5 (2 rows)</option>
+                    <option value="6">Column 3 = 6 (not in any)</option>
+                </select>
+            </div>
+            <small class="form-text text-primary">data-text-selector='.col-filter' data-wrapper-selector='tr.filter'</small>
+        </div>
+        <div class="form-group">
+            <label for="filter-input">Invalid control</label>
+            <div class="input-group">
+                <span id="filter-span">This is the span tag which is not supported</span>
+            </div>
+        </div>
+    </form>
+    <h3 class="text-left">Filter data is on the table</h3>
+    <table class="table-data-list table table-hover table-sm">
+        <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="filter">
+            <td class="column-1">#1</td>
+            <td class="column-2">Column 2.1</td>
+            <td class="column-3 col-filter">Column filter 1</td>
+        </tr>
+        <tr class="filter">
+            <td class="column-1">#2</td>
+            <td class="column-2">Column 2.2</td>
+            <td class="column-3 col-filter">Column filter 2</td>
+        </tr>
+        <tr class="filter">
+            <td class="column-1">#3</td>
+            <td class="column-2">Column 2.3</td>
+            <td class="column-3 col-filter">Column filter 3</td>
+        </tr>
+        <tr class="filter">
+            <td class="column-1">#4</td>
+            <td class="column-2">Column 2.4</td>
+            <td class="column-3 col-filter">Column filter 4</td>
+        </tr>
+        <tr class="filter">
+            <td class="column-1">#5.1</td>
+            <td class="column-2">Column 2.5</td>
+            <td class="column-3 col-filter">Column filter 5.1</td>
+        </tr>
+        <tr class="filter">
+            <td class="column-1">#5.2</td>
+            <td class="column-2">Column 2.5</td>
+            <td class="column-3 col-filter">Column filter 5.2</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#filter-input,#filter-select,#filter-span').bootstrapFilter();
+    });
+</script>
+</body>
+</html>
